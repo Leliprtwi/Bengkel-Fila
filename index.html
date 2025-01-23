@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!--My CSS-->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <title>Project Pengembangan Web</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark justify-content-between fixed-top p-0">
+      <div class="container">
+        <h1>Fila <span>Motor.</span></h1>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="login.html">Login</a>
+            </li>
+            <li class="nav-item dropdown">
+              <button class="btn nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-sun-fill theme-icon-active" data-theme-icon-active="bi-sun-fill"></i></button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="light"><i class="bi bi-sun-fill me-2 opacity-50" data-theme-icon="bi-sun-fill"></i>Light</button>
+                </li>
+                <li>
+                  <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="dark"><i class="bi bi-moon-fill me-2 opacity-50" data-theme-icon="bi-moon-fill"></i>Dark</button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--Home-->
+    <section class="hero" id="home">
+      <div class="mask-container">
+        <main class="content">
+          <h1>Mari Service Motor Anda di <span>Fila Motor</span></h1>
+          <h2>Perawatan Motor yang Tuntas bisa membuat Anda Tenang.</h2>
+          <button class="booking-btn" onclick="location.href='login.html'">Booking Now!</button>
+        </main>
+      </div>
+    </section>
+    <!-- about -->
+    <section class="about md-4 justify-content-center">
+      <div class="abouts md-4 mt-3">
+        <h1>Kenapa harus Memilih Fila Motor?</h1>
+        <h3>
+          Selamat datang di Fila Motor. Nikmati kemudahan di Bengkel Fila Motor yang terintegrasi. Cukup 1 member pelanggan. Layanan puas garansi nota berlaku di seluruh cabang bengkel kami. Pusat terbaik untuk berbagai aksesoris motor
+          berkualitas tinggi! Kami menyediakan berbagai produk untuk memenuhi kebutuhan para pecinta otomotif, mulai dari helm stylish, knalpot performa tinggi, hingga aksesoris custom untuk mempercantik motor Anda.
+        </h3>
+      </div>
+      <div class="about-img rounded-circle">
+        <img src="img/B.jpg" alt="logo" />
+      </div>
+    </section>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="#9e1010"
+        fill-opacity="1"
+        d="M0,32L40,53.3C80,75,160,117,240,160C320,203,400,245,480,224C560,203,640,117,720,101.3C800,85,880,139,960,170.7C1040,203,1120,213,1200,208C1280,203,1360,181,1400,170.7L1440,160L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
+      ></path>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="#9e1010"
+        fill-opacity="1"
+        d="M0,96L40,106.7C80,117,160,139,240,176C320,213,400,267,480,266.7C560,267,640,213,720,170.7C800,128,880,96,960,101.3C1040,107,1120,149,1200,176C1280,203,1360,213,1400,218.7L1440,224L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"
+      ></path>
+    </svg>
+    <!-- layanan -->
+    <section class="layanan text-center">
+      <div class="container">
+        <div class="title">
+          <h1>Layanan Kami</h1>
+        </div>
+        <div class="advantages-grid">
+          <div class="advantage-card">
+            <div class="advantage-icon"><img src="img/11.jpg" alt="Workshop image 2" /></div>
+            <div class="advantage-title">Ganti Oli Motor</div>
+            <div class="advantage-description">Solusi praktis untuk perawatan motor Anda! Kami menyediakan layanan ganti oli motor berkualitas dengan berbagai pilihan merek oli terbaik sesuai kebutuhan kendaraan Anda.</div>
+          </div>
+          <div class="advantage-card">
+            <div class="advantage-icon"><img src="img/10.jpg" alt="Workshop image 1" /></div>
+            <div class="advantage-title">Ganti Suku Cadang Motor</div>
+            <div class="advantage-description">Solusi Lengkap untuk Penggantian Suku Cadang Motor Anda. Kami menyediakan suku cadang terbaik untuk motor anda.</div>
+          </div>
+          <div class="advantage-card">
+            <div class="advantage-icon"><img src="img/9.jpg" alt="Workshop image 1" /></div>
+            <div class="advantage-title">Stylis Body Motor</div>
+            <div class="advantage-description">Percantik motor Anda dengan layanan bodi & cat berkualitas tinggi! Kami menghadirkan hasil yang halus, presisi, dan tahan lama untuk membuat kendaraan Anda tampil seperti baru.</div>
+          </div>
+        </div>
+        <br />
+        <div class="advantages-grid">
+          <div class="advantage-card">
+            <div class="advantage-icon"><img src="img/12.jpg" alt="Workshop image 2" /></div>
+            <div class="advantage-title">Penggantian Ban</div>
+            <div class="advantage-description">Layanan untuk mengganti ban, balancing, dan spooring agar kendaraan tetap stabil saat dijalankan.</div>
+          </div>
+          <div class="advantage-card">
+            <div class="advantage-icon"><img src="img/8.jpg" alt="Workshop image 1" /></div>
+            <div class="advantage-title">Servis Motor</div>
+            <div class="advantage-description">Servis rutin secara berkala untuk semua jenis motor Pemeriksaan dan perawatan sistem mesin, rem, kelistrikan, hingga oli Penggantian suku cadang asliyang terjamin kualitasnya</div>
+          </div>
+          <div class="advantage-card">
+            <div class="advantage-icon"><img src="img/7.jpg" alt="Workshop image 1" /></div>
+            <div class="advantage-title">Service Battery</div>
+            <div class="advantage-description">Pemeriksaan dan penggantian baterai untuk daya yang optimal.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- keunggulan -->
+    <section class="unggul">
+      <div class="title">
+        <h1>Layanan Unggulan</h1>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="img/1.jpg" alt="Emergency Service" />
+          <div class="service-overlay">
+            <div class="service-title">Emergency Service</div>
+            <div class="service-description">Dimanapun motor anda bermasalah kami datangi ke tempat anda, tidak perlu lagi mendorong motor.</div>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="img/2.jpg" alt="Pick Up Service" />
+          <div class="service-overlay">
+            <div class="service-title">Pick Up Service</div>
+            <div class="service-description">Dengan PIckUp Service anda tinggal duduk manis. Pelayanan service antar jemput motor untuk anda yang sedang sibuk.</div>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="img/3.jpg" alt="Emergency Service" />
+          <div class="service-overlay">
+            <div class="service-title">Pick Up Towing</div>
+            <div class="service-description">Layanan towing motor yang siap sedia 24 jam untuk menangani masalah anda..</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- footer -->
+    <div class="footer">
+      <div class="info-grid">
+        <!-- Lokasi Section -->
+        <div class="info-section">
+          <div class="icon">
+            <i class="bi bi-geo-alt-fill"></i>
+          </div>
+          <h2>Lokasi</h2>
+          <ul class="location-list">
+            <li>Jalan Karya Bakti No.28, Kota Medan.</li>
+          </ul>
+        </div>
+
+        <!-- Waktu Operasional Section -->
+        <div class="info-section">
+          <div class="icon">
+            <i class="bi bi-clock-fill"></i>
+          </div>
+          <h2>Waktu Operasional</h2>
+          <div class="hours">
+            <p><strong>Senin s/d Sabtu</strong></p>
+            <p>8.00 – 17.00</p>
+            <p><strong>Minggu</strong></p>
+            <p>Bengkel Libur</p>
+          </div>
+        </div>
+
+        <!-- Kontak Section -->
+        <div class="info-section">
+          <div class="icon">
+            <i class="bi bi-person-lines-fill"></i>
+          </div>
+          <h2>Kontak</h2>
+          <div class="contact-info">
+            <p>Phone: <a href="085276481502">+62 852 – 7648 – 1502</a></p>
+            <p>Email: <a href="filamotor@gmail.com">filamotor@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    // Tambahkan kode ini di index.html setelah konfigurasi Firebase
+    <script type="module">
+      // Import fungsi yang diperlukan dari Firebase
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+      import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+
+      // Konfigurasi Firebase
+      const firebaseConfig = {
+        apiKey: "AIzaSyCJ2fwQ4iaMVEybwi6XB8ZIvlycFKMTUCM",
+        authDomain: "project-pw-63b79.firebaseapp.com",
+        databaseURL: "https://project-pw-63b79-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "project-pw-63b79",
+        storageBucket: "project-pw-63b79.appspot.com",
+        messagingSenderId: "665275542376",
+        appId: "1:665275542376:web:d203788344157961a9c4dd",
+      };
+
+      // Inisialisasi Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      // Fungsi untuk mengecek status autentikasi
+      function checkAuth() {
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            // Jika user sudah login dan mencoba mengakses index.html
+            if (window.location.pathname.includes("index.html") || window.location.pathname === "/") {
+              // Redirect ke index2.html
+              window.location.replace("index2.html");
+            }
+          }
+        });
+      }
+
+      // Jalankan pengecekan saat halaman dimuat
+      document.addEventListener("DOMContentLoaded", checkAuth);
+
+      // Tambahan: Mencegah akses melalui history browser
+      if (sessionStorage.getItem("isLoggedIn") === "true") {
+        window.location.replace("index2.html");
+      }
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>

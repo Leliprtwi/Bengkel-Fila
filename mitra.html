@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!--My CSS-->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <title>Project Pengembangan Web</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark justify-content-between fixed-top p-0">
+      <div class="container">
+        <h1>Fila <span>Motor.</span></h1>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="mitra.html">Mitra</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="booking.html">Booking</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="prosedur.html">Prosedur</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="kontak.html">Contact</a>
+            </li>
+            <li class="nav-item" id="userProfileContainer" style="display: none">
+              <img id="userProfilePhoto" src="" alt="Profile" class="rounded-circle" style="width: 40px; height: 40px; cursor: pointer; margin: 10px" />
+            </li>
+            <li class="nav-item dropdown">
+              <button class="btn nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-sun-fill theme-icon-active" data-theme-icon-active="bi-sun-fill"></i></button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="light"><i class="bi bi-sun-fill me-2 opacity-50" data-theme-icon="bi-sun-fill"></i>Light</button>
+                </li>
+                <li>
+                  <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="dark"><i class="bi bi-moon-fill me-2 opacity-50" data-theme-icon="bi-moon-fill"></i>Dark</button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- mitra -->
+    <div class="about-profit section-padding section-bg-clr">
+      <div class="container">
+        <div class="section-wrapper">
+          <div class="row">
+            <div class="col-4">
+              <div class="about-info">
+                <span>2.000+</span>
+                <h3>Pelanggan Fila Motor</h3>
+                <p>2.000 lebih pelanggan yang telah terdaftar dan siap menggunakan layanan Fila Motor untuk menikmati layanan servis motor tanpa harus repot pergi ke bengkel.</p>
+              </div>
+            </div>
+            <div class="col-8">
+              <div class="about-info-profit">
+                <h3>Keuntungan bermitra dengan Fila Motor</h3>
+                <div class="col-half list-item">
+                  <div class="about-item f f-r">
+                    <div class="about-thumb">
+                      <img src="https://www.go-mekanik.com/assets/images/about/01.png" alt="about" />
+                    </div>
+                    <div class="about-content">
+                      <h5>Review kinerja mekanik</h5>
+                      <p>Review &amp; rating pelanggan mempermudah menilai kinerja mekanik.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-half list-item">
+                  <div class="about-item f f-r">
+                    <div class="about-thumb">
+                      <img src="https://www.go-mekanik.com/assets/images/about/02.png" alt="about" />
+                    </div>
+                    <div class="about-content">
+                      <h5>Modal kecil</h5>
+                      <p>Tanpa perlu investasi bangunan untuk meningkatkan kapasitas bengkel.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-half list-item">
+                  <div class="about-item f f-r">
+                    <div class="about-thumb">
+                      <img src="https://www.go-mekanik.com/assets/images/about/03.png" alt="about" />
+                    </div>
+                    <div class="about-content">
+                      <h5>Market lebih luas</h5>
+                      <p>Calon Pelanggan tidak lagi hanya sebatas di sekitar lokasi bengkel saja.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-half list-item">
+                  <div class="about-item f f-r">
+                    <div class="about-thumb">
+                      <img src="https://www.go-mekanik.com/assets/images/about/04.png" alt="about" />
+                    </div>
+                    <div class="about-content">
+                      <h5>Menaikan omset</h5>
+                      <p>Mendapatkan calon konsumen yang belum pernah tersentuh sama sekali.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+      <div class="info-grid">
+        <!-- Lokasi Section -->
+        <div class="info-section">
+          <div class="icon">
+            <i class="bi bi-geo-alt-fill"></i>
+          </div>
+          <h2>Lokasi</h2>
+          <ul class="location-list">
+            <li>Jalan Karya Bakti No.28, Kota Medan.</li>
+          </ul>
+        </div>
+
+        <!-- Waktu Operasional Section -->
+        <div class="info-section">
+          <div class="icon">
+            <i class="bi bi-clock-fill"></i>
+          </div>
+          <h2>Waktu Operasional</h2>
+          <div class="hours">
+            <p><strong>Senin s/d Sabtu</strong></p>
+            <p>8.00 – 17.00</p>
+            <p><strong>Minggu</strong></p>
+            <p>Bengkel Libur</p>
+          </div>
+        </div>
+
+        <!-- Kontak Section -->
+        <div class="info-section">
+          <div class="icon">
+            <i class="bi bi-person-lines-fill"></i>
+          </div>
+          <h2>Kontak</h2>
+          <div class="contact-info">
+            <p>Phone: <a href="085276481502">+62 852 – 7648 – 1502</a></p>
+            <p>Email: <a href="filamotor@gmail.com">filamotor@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- scrtipt -->
+    <script>
+      // Konfigurasi Firebase
+      const firebaseConfig = {
+        apiKey: "AIzaSyCJ2fwQ4iaMVEybwi6XB8ZIvlycFKMTUCM",
+        authDomain: "project-pw-63b79.firebaseapp.com",
+        databaseURL: "https://project-pw-63b79-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "project-pw-63b79",
+        storageBucket: "project-pw-63b79.appspot.com",
+        messagingSenderId: "665275542376",
+        appId: "1:665275542376:web:d203788344157961a9c4dd",
+      };
+
+      // Inisialisasi Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      // Cek status autentikasi
+      firebase.auth().onAuthStateChanged((user) => {
+        const userProfileContainer = document.getElementById("userProfileContainer");
+        const userProfilePhoto = document.getElementById("userProfilePhoto");
+
+        if (user) {
+          // User sudah login
+          userProfileContainer.style.display = "block";
+          userProfilePhoto.src = user.photoURL || "path/to/default/image.jpg";
+
+          // Tambahkan event listener untuk navigasi ke profile
+          userProfilePhoto.addEventListener("click", () => {
+            window.location.href = "profile.html";
+          });
+        } else {
+          // User belum login, arahkan ke halaman login
+          window.location.href = "login.html";
+        }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Form</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      :root {
+        --primary-color: #000;
+        --secondary-color: #fff;
+        --third-color: #9e1010;
+      }
+      body {
+        background: linear-gradient(135deg, var(--third-color), #f17a65);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+      .container {
+        background: var(--secondary-color);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 15px 30px var(--primary-color);
+        width: 100%;
+        max-width: 600px;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .header h2 {
+        color: var(--primary-color);
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+      .header p {
+        color: var(--primary-color);
+        font-size: 16px;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--primary-color);
+        font-weight: 500;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="date"],
+      input[type="time"],
+      select {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid var(--primary-color);
+        border-radius: 8px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+      input:focus,
+      select:focus {
+        border-color: var(--third-color);
+        outline: none;
+        box-shadow: 0 0 0 3px var(--primary-color);
+      }
+      button {
+        background: var(--third-color);
+        color: var(--secondary-color);
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        transition: all 0.3s ease;
+      }
+      button:hover {
+        background: var(--third-color);
+        transform: translateY(-2px);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .pesan textarea {
+        width: 34rem;
+        height: 5rem;
+      }
+      @media (max-width: 600px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .success-message {
+        display: none;
+        text-align: center;
+        color: #198754;
+        background: var(--secondary-color);
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+      .time-note {
+        color: #6c757d;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>📅Booking Sekarang!</h2>
+        <p>Silakan isi form di bawah ini untuk melakukan pemesanan</p>
+      </div>
+
+      <form id="bookingForm" onsubmit="handleSubmit(event)">
+        <div class="grid">
+          <div class="form-group">
+            <label for="name">Nama Lengkap</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="form-group">
+            <label for="phone">Nomor Telepon</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+          <div class="form-group">
+            <label for="service">Layanan</label>
+            <select id="service" name="service" required>
+              <option value="">Pilih Layanan</option>
+              <option value="basic">Basic Package</option>
+              <option value="standard">Standard Package</option>
+              <option value="premium">Premium Package</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="form-group">
+            <label for="date">Tanggal</label>
+            <input type="date" id="date" name="date" required />
+          </div>
+          <div class="form-group">
+            <label for="time">Waktu</label>
+            <input type="time" id="time" name="time" min="08:00" max="17:00" required />
+            <div class="time-note">*Tersedia dari jam 08:00 - 17:00</div>
+          </div>
+        </div>
+        <button type="submit">Booking Sekarang</button>
+      </form>
+      <div id="successMessage" class="success-message">Booking berhasil! Anda akan diarahkan ke WhatsApp.</div>
+    </div>
+
+    <script>
+      const dateInput = document.getElementById("date");
+      const today = new Date().toISOString().split("T")[0];
+      dateInput.min = today;
+      // Daftar hari libur
+      const holidays = ["2024-01-01", "2024-12-25", "2024-08-17"];
+      // fungsi memeriksa hari
+      function isHolidayOrSunday(date) {
+        const day = date.getDay();
+        const formattedDate = date.toISOString().split("T")[0];
+        return day === 0 || holidays.includes(formattedDate);
+      }
+      dateInput.addEventListener("input", function () {
+        const selectedDate = new Date(this.value);
+        if (isHolidayOrSunday(selectedDate)) {
+          alert("Bengkel tutup setiap hari Minggu dan hari libur tertentu. Silakan pilih tanggal lain.");
+          this.value = "";
+        }
+      });
+      function handleSubmit(event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const service = document.getElementById("service").value;
+        const date = document.getElementById("date").value;
+        const time = document.getElementById("time").value;
+        // Format pesan
+        const message = `*Booking Baru!*%0a%0a` + `Nama: ${name}%0a` + `Email: ${email}%0a` + `Telepon: ${phone}%0a` + `Layanan: ${service}%0a` + `Tanggal: ${date}%0a` + `Waktu: ${time}`;
+        const phoneNumber = "6285276481502";
+        document.getElementById("successMessage").style.display = "block";
+        document.getElementById("bookingForm").reset();
+        // diarahkan ke WA
+        setTimeout(() => {
+          window.location.href = `https://wa.me/${phoneNumber}?text=${message}`;
+        }, 1000);
+      }
+      // penentuan waktu
+      document.getElementById("time").addEventListener("change", function (e) {
+        const time = e.target.value;
+        const hour = parseInt(time.split(":")[0]);
+        if (hour < 8 || hour >= 17) {
+          alert("Mohon pilih waktu antara jam 08:00 - 17:00");
+          e.target.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>
